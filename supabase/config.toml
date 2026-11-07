@@ -1,0 +1,51 @@
+project_id = "segusys-prod"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "storage"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 15
+
+[studio]
+enabled = true
+port = 54323
+
+[auth]
+enabled = true
+site_url = "https://admin.segusys.mx"
+additional_redirect_urls = ["http://localhost:3000"]
+jwt_expiry = 43200          # 12h
+enable_refresh_token_rotation = true
+refresh_token_reuse_interval = 10
+enable_signup = false       # solo admin crea usuarios
+
+[auth.email]
+enable_signup = false
+enable_confirmations = true
+double_confirm_changes = true
+
+[storage]
+enabled = true
+file_size_limit = "5MiB"
+
+[edge_runtime]
+enabled = true
+policy = "oneshot"
+
+[functions.verify-pin]
+verify_jwt = false           # se llama sin sesión
+
+[functions.send-push-alert]
+verify_jwt = true
+
+[functions.export-payroll]
+verify_jwt = true
+
+[functions.schedule-cron-missed]
+verify_jwt = false           # cron interno

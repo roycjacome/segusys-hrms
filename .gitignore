@@ -1,0 +1,63 @@
+# Env / secrets
+.env
+.env.local
+.env.*.local
+!.env.example
+*.pem
+*.key
+*.p8
+*.p12
+google-services.json
+GoogleService-Info.plist
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+dist/
+build/
+.vercel
+.turbo
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+android/.gradle/
+android/local.properties
+android/app/release/
+*.iml
+*.ipr
+*.iws
+
+# Supabase
+.supabase/
+supabase/.branches/
+supabase/.temp/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Test / coverage
+coverage/
+*.lcov
+.nyc_output/
